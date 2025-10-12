@@ -22,12 +22,13 @@
       background-color: #f8f9fa;
     }
 
+    /* UPDATED: Brighter blue for better visibility on dark backgrounds */
     .accent-color {
-      color: #007BFF;
+      color: #4A90E2; 
     }
 
     .bg-accent-color {
-      background-color: #007BFF;
+      background-color: #4A90E2;
     }
 
     .section-title {
@@ -46,7 +47,7 @@
     }
 
     .nav-link:hover, .nav-link.active {
-      color: #007BFF;
+      color: #4A90E2; /* Uses updated accent color */
     }
 
     .fade-in {
@@ -390,8 +391,8 @@
           const y = Math.random() * canvas.height;
           const dirX = (Math.random() * 0.4) - 0.2;
           const dirY = (Math.random() * 0.4) - 0.2;
-          // Using a slightly more vibrant blue for connection effect
-          particles.push(new Particle(x, y, dirX, dirY, size, 'rgba(0, 123, 255, 0.5)'));
+          // Using the new, brighter accent blue for connection effect on dark BG
+          particles.push(new Particle(x, y, dirX, dirY, size, 'rgba(74, 144, 226, 0.5)')); // #4A90E2 
         }
       }
 
@@ -405,7 +406,7 @@
             if (distance < connectionThreshold) {
               // Normalize distance to control opacity, closer particles are more opaque
               const opacity = 1 - (distance / connectionThreshold);
-              ctx.strokeStyle = `rgba(0, 123, 255, ${opacity})`;
+              ctx.strokeStyle = `rgba(74, 144, 226, ${opacity})`; // #4A90E2 
               ctx.lineWidth = 1;
               ctx.beginPath();
               ctx.moveTo(particles[a].x, particles[a].y);
@@ -430,4 +431,3 @@
   </script>
 </body>
 </html>
-
